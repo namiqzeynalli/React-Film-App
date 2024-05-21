@@ -11,7 +11,6 @@ export const sendList = createAsyncThunk("sendFavorite", async (list) => {
             'Content-Type': 'application/json'
         }
     })
-    // console.log(response.data)
     return response.data;
 });
 
@@ -22,7 +21,6 @@ export const sendFavoriteSlice = createSlice({
     reducers: {},
     extraReducers: (builder) => {
         builder.addCase(sendList.fulfilled, (state, action) => {
-            // console.log(action.payload)
             if (action.payload.movies.length > 0) {
                 state.lists = [action.payload, ...state.lists];
                 console.log("gonderdi")

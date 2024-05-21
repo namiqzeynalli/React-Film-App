@@ -1,6 +1,6 @@
 import React from "react";
 import "./Favorites.css";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 const FavoritesLink = () => {
@@ -14,10 +14,7 @@ const FavoritesLink = () => {
           <ul key={item.id}>
             <li
               onClick={() => {
-                return (
-                  navigate(`/list/${item.id}`)
-             
-                );
+                return navigate(`/list/${item.id}`);
               }}
             >
               {item.title}

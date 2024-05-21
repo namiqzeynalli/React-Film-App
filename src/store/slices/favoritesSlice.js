@@ -15,15 +15,13 @@ export const favoritesSlice = createSlice({
         },
         deleteList: (state, action) => {
             state.favorites = state.favorites.filter((favorite) => favorite.id !== action.payload)
-            // console.log(state.favorites)
         },
         deleteAll: (state) => {
             state.favorites = [];
         }
     },
-    // extraReducers: (builder) => {}
 })
 
-export const { addList, deleteList,deleteAll } = favoritesSlice.actions
+export const { addList, deleteList, deleteAll } = favoritesSlice.actions
 
 export default favoritesSlice.reducer
